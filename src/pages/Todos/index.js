@@ -7,15 +7,15 @@ import './style.less';
 
 export default function Todos() {
 	return (
-		<div className="Todos container">
+		<section className="Todos container">
 			<div className="row justify-content-center">
-				<div className="col-6 alert alert-info">
+				<div className="col-md-6 col-12 alert alert-info">
 					<h1> Todos List </h1>
 					<TodosAddNew />
 					<TodosBadges />
 					<TodosList />
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 }

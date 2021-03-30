@@ -1,4 +1,4 @@
-import { arrayToEnum } from '_helper/arrayHelper';
+import { arrayToEnum } from '../helper/arrayHelper';
 
 const ActionTypes = [
 	'ADD_TODO',

@@ -2,10 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-
 function TodosBadges({ totalNum, completedNum }) {
 	return (
-		<div className="TodosHeader">
+		<div className="TodosBadges">
 			<span className="badge badge-pill badge-primary px-4 py-2">
 				Total:
 				{totalNum}
@@ -17,8 +16,6 @@ function TodosBadges({ totalNum, completedNum }) {
 		</div>
 	);
 }
-
-
 
 
 TodosBadges.propTypes = {

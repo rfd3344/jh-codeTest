@@ -1,15 +1,22 @@
+import TodosColumn from '../constants/TodosColumn';
 
 function getPriorityNum(priority) {
 	switch (priority) {
-	case 'low': return 1;
-	case 'medium': return 2;
 	case 'high': return 3;
+	case 'medium': return 2;
+	case 'low': return 1;
 	default: return 0;
 	}
 }
 
-
-export function sortTodosList(todos = [], sortBy = 'name') {
+/**
+ * sort todos list
+ *
+ * @param {array} todos
+ * @param {enum} sortBy sort by name or priority
+ * @returns {array} sorted new todos list
+ */
+export function sortTodosList(todos = [], sortBy = TodosColumn.NAME) {
 	if (sortBy === 'name') {
 		return todos.sort(function (a, b) {
 			const nameA = a.name.toUpperCase();

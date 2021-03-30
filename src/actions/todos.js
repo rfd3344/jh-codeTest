@@ -1,10 +1,9 @@
-import ActionTypes from '_constants/ActionTypes';
-
-let nextTodoId = 5;
+import { v4 as uuidv4 } from 'uuid';
+import ActionTypes from '../constants/ActionTypes';
 
 export const addTodo = (name, priority) => ({
 	type: ActionTypes.ADD_TODO,
-	id: nextTodoId++,
+	id: uuidv4(),
 	name,
 	priority,
 });

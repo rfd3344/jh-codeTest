@@ -1,20 +1,12 @@
-
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { toggleTodo, deleteTodo } from '_actions/todos';
+import { toggleTodo, deleteTodo } from '../../actions/todos';
 
 function TodosItem({
 	itemId, name, priority, completed,
-	handleToggle, handleDelete,
+	handleComplete, handleDelete,
 }) {
-	const [isCompleted, setIsCompleted] = useState(completed);
-
-	const handleCheckBox = () => {
-		setIsCompleted(!isCompleted);
-		handleToggle(itemId);
-	};
-
 	let itemClassName = completed ? 'completed ' : 'pending ';
 	itemClassName += 'list-group-item TodosItem';
 
@@ -27,7 +19,7 @@ function TodosItem({
 				{priority}
 			</span>
 			<span className="actions">
-				<input type="checkbox" checked={isCompleted} onChange={handleCheckBox} />
+				<input type="checkbox" checked={completed} onChange={handleComplete.bind(null, itemId)} />
 				<i className="material-icons" onClick={handleDelete.bind(null, itemId)}>delete</i>
 			</span>
 		</li>
@@ -35,16 +27,16 @@ function TodosItem({
 }
 
 const mapDispatchToProps = (dispatch) => ({
-	handleToggle: (id) => dispatch(toggleTodo(id)),
+	handleComplete: (id) => dispatch(toggleTodo(id)),
 	handleDelete: (id) => dispatch(deleteTodo(id)),
 });
 
 TodosItem.propTypes = {
-	itemId: PropTypes.number.isRequired,
+	itemId: PropTypes.string.isRequired,
 	name: PropTypes.string.isRequired,
 	priority: PropTypes.string.isRequired,
 	completed: PropTypes.bool.isRequired,
-	handleToggle: PropTypes.func.isRequired,
+	handleComplete: PropTypes.func.isRequired,
 	handleDelete: PropTypes.func.isRequired,
 };
 

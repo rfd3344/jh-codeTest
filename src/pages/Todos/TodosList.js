@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { sortTodosList } from '_utilis/todos';
-import TodosColumn from '_constants/TodosColumn';
+import { sortTodosList } from '../../utilis/todos';
+import TodosColumn from '../../constants/TodosColumn';
 import TodosItem from './TodosItem';
 
 function TodosList({ todosData }) {
@@ -45,7 +45,7 @@ function TodosList({ todosData }) {
 TodosList.propTypes = {
 	todosData: PropTypes.arrayOf(
 		PropTypes.shape({
-			id: PropTypes.number.isRequired,
+			id: PropTypes.string.isRequired,
 			name: PropTypes.string.isRequired,
 			priority: PropTypes.string.isRequired,
 			completed: PropTypes.bool.isRequired,
