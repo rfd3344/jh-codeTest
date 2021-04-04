@@ -3,10 +3,10 @@
 - Mathspace offers interactive content which allows students to demonstrate their understanding of mathematical concepts. For this task, we want you to create an interactive histogram component in React
 
 - ![Reference Screenshot](assets/histogram.png)
- 
-- For this task, it is important to focus on ensuring the user experience is correct. 
 
-- You should also focus on ensuring your code is clear and easy to read. 
+- For this task, it is important to focus on ensuring the user experience is correct.
+
+- You should also focus on ensuring your code is clear and easy to read.
 
 - Your usage of React should be idiomatic and correct with appropriate abstraction and component design.
 
@@ -15,7 +15,7 @@
    * Extra-functionality
    * Accessibility
 
-- Please include: a readme explaining design choices and assumptions. 
+- Please include: a readme explaining design choices and assumptions.
 
 ## Requirements
 
@@ -25,13 +25,13 @@
 
 - You are allowed to use js utilities libraries: `lodash`, `ramda`, `jquery`, etc
 
-- Please limit your use of 3rd party libraries - exercise your judgement but we want to see how you approach creating this component 
+- Please limit your use of 3rd party libraries - exercise your judgement but we want to see how you approach creating this component
 
 - Please add to your README, why you choose to use a particular library/utility
 
 - Feel free to use TypeScript/Flow if that's what you prefer; untyped JavaScript is perfectly fine too.
 
-## Specification 
+## Specification
 
 - 1-4 bars can be configured via code
 
@@ -48,7 +48,7 @@
 - The Y-axis should not be able to be set lower than the histogram columns
 
 - The page should be able to have multiple components at a time  
-  
+
 ### Instructions
 
 - Try not to spend more that 4 hours maximum (We don't want you to lose a weekend over this)
@@ -64,3 +64,16 @@
 - You may have questions as you interpret and implement the component, use your best judgment – we're interested in understanding your decisions.
 
 - When you have finished, zip up the solution/repository and send back to us. _Please do not publish your work to a public repository or hosting service._
+
+
+# Code Explanation
+
+## How to start
+- run `npm i && npm start`
+- the server is running on `http://localhost:3000/`
+
+## Additional Info
+1. Initial starting values can be set at at `src/constant/histogram`.
+All following value can be reset: `MIN_YAXIS`, `SVG_WIDTH`, `SVG_HEIGHT` and `INITIAL_STATE`.
+2. For additional library, only `prop-types` library is imported for React props type checking.
+3. I did not write any test code as it is mentioned as `no need for: Tests`.
