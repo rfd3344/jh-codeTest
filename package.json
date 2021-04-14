@@ -17,7 +17,7 @@
     "build-webpack": "webpack --config config/webpack.config.prod.js",
     "clean": "rimraf public/dist/* && rimraf public/index.html",
     "lint": "eslint src/ && eslint tests/",
-    "test": "jest --config=jest.config.js --watch",
+    "test": "jest --config=jest.config.js --watchAll",
     "server": "node config/server.js"
   },
   "dependencies": {
