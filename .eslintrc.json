@@ -1,0 +1,46 @@
+{
+	"extends": "airbnb",
+	"parser": "babel-eslint",
+	"settings": {
+		"import/resolver": {
+			"node": {
+				"extensions": [
+					".js",
+					".jsx"
+				]
+			}
+		}
+	},
+	"env": {
+		"browser": true,
+		"commonjs": true,
+		"shared-node-browser": true,
+		"mocha": true,
+		"es6":true,
+		"worker":true,
+		"phantomjs":true
+	},
+	"plugins": [
+		"chai-expect"
+	],
+	"rules": {
+		"indent": ["error", "tab"],
+		"no-tabs": 0,
+		"prefer-arrow-callback": 0,
+		"func-names": 0,
+		"max-len": ["warn", {"code": 200}],
+		"linebreak-style": 0,
+		"import/no-unresolved": 0,
+		"no-plusplus": 0,
+		"no-restricted-globals": 0,
+		"no-multiple-empty-lines": 0,
+		"import/extensions": 0,
+		"react/jsx-indent": ["error", "tab"],
+		"react/jsx-indent-props": 0,
+		"react/jsx-filename-extension": [1, {"extensions": [".js", ".jsx"]}],
+		"jsx-a11y/label-has-associated-control": 0,
+		"import/prefer-default-export": 0,
+		"no-restricted-syntax": 0,
+		"no-prototype-builtins": 0
+	}
+}
