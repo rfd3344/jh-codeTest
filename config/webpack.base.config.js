@@ -1,107 +1,125 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const tsConfig = require('../tsconfig.json');
 
-const entryConfig = {
-	main: path.resolve(__dirname, '../src/index.tsx'),
+// webpack config for entry
+const entry = {
+  main: path.resolve(__dirname, '../src/index.tsx'),
 };
 
-const outputConfig = {
-	filename: './dist/[name].bundle.js',
-	path: path.resolve(__dirname, '../public/'),
-	publicPath: '/',
+// webpack config for output
+const output = {
+  // the target directory for all output files
+  path: path.resolve(__dirname, '../public/'),
+  filename: './dist/[name].bundle.js',
+  publicPath: '/',
 };
 
+// webpack config for module
 const moduleConfig = {
-	rules: [
-		{
-			test: /\.tsx?$/,
-			exclude: /(node_modules|bower_components)/,
-			use: [
-				{  loader:'ts-loader' },
-				// {
-				// 	loader: 'babel-loader',
-				// 	options: {
-				// 		presets: ['@babel/preset-env', '@babel/preset-react'],
-				// 		plugins: ['@babel/plugin-transform-runtime'],
-				// 	},
-				// },
-			],
-			exclude: /node_modules/,
-		},
-		{
-			test: /\.(js|jsx)$/,
-			exclude: /(node_modules|bower_components)/,
-			use: [
-				{
-					loader: 'babel-loader',
-					options: {
-						presets: ['@babel/preset-env', '@babel/preset-react'],
-						plugins: ['@babel/plugin-transform-runtime'],
-					},
-				},
-				// closed eslint check, reduce info generate in Terminal
-				// { loader: 'eslint-loader' },
-			],
-		},
-		{
-			test: /\.(less|css)$/,
-			use: [
-				{ loader: 'style-loader' },
-				{ loader: 'css-loader' },
-			],
-		},
-		{
-			test: /\.(png|jpg|gif)$/,
-			use: [{ loader: 'file-loader' }],
-		},
-	],
+  rules: [
+    {
+      test: /\.tsx?$/,
+      exclude: /(node_modules|bower_components)/,
+      use: [
+        { loader: 'ts-loader' },
+        // {
+        // 	loader: 'babel-loader',
+        // 	options: {
+        // 		presets: ['@babel/preset-env', '@babel/preset-react'],
+        // 		plugins: ['@babel/plugin-transform-runtime'],
+        // 	},
+        // },
+      ],
+    },
+    {
+      test: /\.(js|jsx)$/,
+      exclude: /(node_modules|bower_components)/,
+      use: [
+        {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+            plugins: ['@babel/plugin-transform-runtime'],
+          },
+        },
+        // closed eslint check, reduce info generate in Terminal
+        // { loader: 'eslint-loader' },
+      ],
+    },
+    {
+      test: /\.(less|css)$/,
+      use: [
+        { loader: MiniCssExtractPlugin.loader },
+        { loader: 'css-loader' },
+      ],
+    },
+    // process small image
+    // for image less than "limit", transfer to base64
+    // {
+    //   test: /\.(png|jpg|gif)$/,
+    //   use: {
+    //     loader: 'url-loader',
+    //     options: {
+    //       limit: 10240,
+    //     },
+    //   },
+    // },
+    // process big image
+    {
+      test: /\.(png|jpg|gif)$/,
+      use: [{
+        loader: 'file-loader',
+        options: {
+          name: 'img/[name].[hash:8].[ext]',
+        },
+      }],
+    },
+  ],
 };
+
+
+function resolveTsconfigPathsToAlias(paths) {
+  const processPath = (dirs) => dirs[0].replace('/*', '').replace('*', '');
+
+  const aliases = Object.keys(paths).reduce((acc, key) => {
+    const aliasKey = key.replace('/*', '');
+    const value = path.resolve(__dirname, `../${processPath(paths[key])}`);
+    acc[aliasKey] = value;
+    return acc;
+  }, {});
+  return aliases;
+}
 
 const resolveConfig = {
-	// alias: {
-	// 	// Define directory with alias name. usage:
-	// 	'@': path.resolve(__dirname, '../src/'),
-	// 	// _actions: path.resolve(__dirname, '../src/actions'),
-	// 	// _reducers: path.resolve(__dirname, '../src/reducers'),
-	// 	// _helper: path.resolve(__dirname, '../src/helper'),
-	// 	// _constants: path.resolve(__dirname, '../src/constants'),
-	// 	// _components: path.resolve(__dirname, '../src/components'),
-	// 	// _pages: path.resolve(__dirname, '../src/pages'),
-	// },
-	// plugins: [new TsconfigPathsPlugin({})],
-	alias: resolveTsconfigPathsToAlias(),
-	extensions: ['.tsx', '.ts', '.js'],
+  // alias define directory with alias name. usage:
+  // '@': path.resolve(__dirname, '../src/'),
+  alias: resolveTsconfigPathsToAlias(tsConfig.compilerOptions.paths),
+  // add file extension in following sequence
+  extensions: ['.tsx', '.ts', '.jsx', '.js'],
 };
-
-
-function resolveTsconfigPathsToAlias() {
-    const { paths } = require('../tsconfig.json').compilerOptions;
-    const aliases = {};
-
-    Object.keys(paths).forEach((item) => {
-        const key = item.replace('/*', '');
-        const value = path.resolve(__dirname, '../' + paths[item][0].replace('/*', '').replace('*', ''));
-        aliases[key] = value;
-    });
-    return aliases;
-}
 
 
 const performanceConfig = {
-	hints: 'warning',
-	maxEntrypointSize: 4000000,
-	maxAssetSize: 4000000,
+  hints: 'warning',
+  maxEntrypointSize: 4000000,
+  maxAssetSize: 4000000,
 };
 
 const pluginsConfig = [
-	// new webpack.NamedModulesPlugin(),
+  // new webpack.NamedModulesPlugin(),
+  new MiniCssExtractPlugin({
+    filename: '[name].css',
+    chunkFilename: '[id].css',
+  }),
 ];
 
 
 module.exports = {
-	entry: entryConfig,
-	output: outputConfig,
-	module: moduleConfig,
-	resolve: resolveConfig,
-	performance: performanceConfig,
-	plugins: pluginsConfig,
+  entry,
+  output,
+  module: moduleConfig,
+  resolve: resolveConfig,
+  performance: performanceConfig,
+  plugins: pluginsConfig,
 };

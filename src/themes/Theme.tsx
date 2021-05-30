@@ -1,4 +1,5 @@
 import React from 'react';
+import ErrorBoundary from '@/components/ErrorBoundary';
 
 import Routers from './Routers';
 // import Header from './PageHeader';
@@ -8,7 +9,9 @@ export default function Theme() {
   return (
     <div id="page">
       <main className="container">
-        <Routers />
+        <ErrorBoundary>
+          <Routers />
+        </ErrorBoundary>
       </main>
     </div>
   );
