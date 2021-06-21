@@ -1,0 +1,17 @@
+node_modules
+package-lock.json
+.expo/*
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+web-report/
+
+public/
+
+# macOS
+.DS_Store
