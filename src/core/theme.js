@@ -1,11 +1,4 @@
 import { createTheme } from '@mui/material/styles';
-import { grey } from '@mui/material/colors';
-// interface PaletteColor {``
-//   lightBlue: string;
-//   main: string;
-//   dark?: string;
-//   contrastText?: string;
-// }
 
 const colours = {
   lightBlue: '#edfbff',
