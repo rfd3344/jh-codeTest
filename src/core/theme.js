@@ -10,7 +10,6 @@ import { createTheme } from '@mui/material/styles';
 const colours = {
   lightBlue: '#edfbff',
   blue: '#006fe8',
-  gray: '#a1a6b0',
   success: '#4caf50',
   error: '#e9453a',
 };
@@ -48,12 +47,9 @@ export const theme = createTheme({
     },
   },
   palette: {
-    blue: {
+    primary: {
       main: colours.blue,
       light: colours.lightBlue,
-    },
-    gray: {
-      main: colours.gray,
     },
     success: {
       main: colours.success,

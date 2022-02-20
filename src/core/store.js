@@ -5,7 +5,7 @@ import logger from 'redux-logger';
 
 export const store = configureStore({
   reducer: {
-    login: loginReducer,
+    // login: loginReducer,
   },
   middleware:
     process.env.NODE_ENV === 'development'
