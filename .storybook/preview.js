@@ -1,9 +1,8 @@
 import { theme } from '../src/common/theme';
-import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
-
+import { ThemeProvider } from '@mui/material/styles';
 import React from 'react';
-import { store } from '../src/app/store';
 import { Provider } from 'react-redux';
+import { store } from '../src/app/store';
 
 export const decorators = [
   (Story) => (
@@ -15,17 +14,6 @@ export const decorators = [
   ),
 ];
 
-// export const parameters = {
-//   actions: { argTypesRegex: '^on[A-Z].*' },
-//   controls: {
-//     // hideNoControlsWarning: true,  // hidden control args  warning
-//     // expanded: true,  // show 'Description' and 'Default' coloum for arguments
-//     // matchers: {
-//     //   color: /(background|color)$/i,
-//     //   date: /Date$/,
-//     // },
-//   },
-// };
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

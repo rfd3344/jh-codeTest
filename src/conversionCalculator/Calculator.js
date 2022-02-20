@@ -14,7 +14,9 @@ export const Calculator = () => {
       bgcolor="grey.light"
       borderRadius={1}
     >
-      <Typography variant="h4">Currency Converter</Typography>
+      <Box textAlign="center">
+        <Typography variant="h4">Currency Converter</Typography>
+      </Box>
       <CurrencyPanel />
       <FeeDetails />
     </Container>
