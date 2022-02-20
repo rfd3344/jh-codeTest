@@ -8,3 +8,4 @@
 
 https://www.xe.com/currencyconverter/convert/?Amount=1000&From=USD&To=AUD
 https://www.commbank.com.au/international/foreign-exchange-calculator.html
+https://www.westpac.com.au/personal-banking/services/currency-converter/
