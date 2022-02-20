@@ -52,11 +52,11 @@ export const theme = createTheme({
       main: colours.blue,
       light: colours.lightBlue,
     },
-    success: {
-      main: colours.success,
-    },
     grey: {
       light: colours.lightGrey,
+    },
+    success: {
+      main: colours.success,
     },
     error: {
       main: colours.error,

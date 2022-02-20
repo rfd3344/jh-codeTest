@@ -1,8 +1,9 @@
-import { theme } from '../src/common/theme';
-import { ThemeProvider } from '@mui/material/styles';
 import React from 'react';
+import { ThemeProvider } from '@mui/material/styles';
 import { Provider } from 'react-redux';
-import { store } from '../src/app/store';
+
+import { theme } from '../src/core/theme';
+import { store } from '../src/core/store';
 
 export const decorators = [
   (Story) => (
@@ -13,7 +14,6 @@ export const decorators = [
     </Provider>
   ),
 ];
-
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

@@ -5,9 +5,8 @@ export default {
   title: 'Theme',
 };
 
-const BOX_SIZE = 200;
-
 export const Palette = () => {
+  const BOX_SIZE = 200;
   const theme = useTheme();
 
   const ColorBox = ({ color, children }) => (
@@ -15,15 +14,13 @@ export const Palette = () => {
       {children}
     </Box>
   );
-
-  console.warn('theme.palette', theme.palette);
   return (
     <Grid container>
-      <ColorBox color={theme.palette.blue.main}> blue.main </ColorBox>
-      {/* <ColorBox color={theme.palette.blue.light}> blue.light </ColorBox>
-      <ColorBox color={theme.palette.gray.main}> gray.main </ColorBox>
+      <ColorBox color={theme.palette.primary.main}> primary.main </ColorBox>
+      <ColorBox color={theme.palette.primary.light}> primary.light </ColorBox>
+      <ColorBox color={theme.palette.grey.light}> grey.light </ColorBox>
       <ColorBox color={theme.palette.success.main}> success.main </ColorBox>
-      <ColorBox color={theme.palette.error.main}> error.main </ColorBox> */}
+      <ColorBox color={theme.palette.error.main}> error.main </ColorBox>
     </Grid>
   );
 };
@@ -44,26 +41,6 @@ export const FontStyle = () => {
       <Typography variant="subtitle2">Typography - subtitle2</Typography>
       <Typography variant="button">Typography- button</Typography>
       <Typography> Typography noVariant</Typography>
-    </Box>
-  );
-};
-
-export const Buttons = () => {
-  return (
-    <Box>
-      <Button variant="contained" color="default">
-        Cancel
-      </Button>
-      <Button variant="contained" color="primary">
-        Delete
-      </Button>
-      <Button variant="contained" color="secondary">
-        Save
-      </Button>
-      <Button>button</Button>
-      <Button variant="outlined" color="primary">
-        button
-      </Button>
     </Box>
   );
 };
