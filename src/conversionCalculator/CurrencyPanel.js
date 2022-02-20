@@ -41,7 +41,7 @@ export const CurrencyPanel = () => {
   };
 
   useEffect(() => {
-    // dispatch(getConversionRate());
+    dispatch(getConversionRate());
     const interval = setInterval(() => {
       dispatch(getConversionRate());
     }, 30000);

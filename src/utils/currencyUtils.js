@@ -5,11 +5,7 @@ export const PAYTRON_MAKEUP = 0.005;
 export const RATE_RUL =
   'https://wnvgqqihv6.execute-api.ap-southeast-2.amazonaws.com/Public/public/rates';
 
-/**********
- *
- *
- *
- */
+
 export const formatConversionRateUrl = (searchParams = {}) => {
   const nextSearchParams = {
     Amount: searchParams.amount,

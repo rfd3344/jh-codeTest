@@ -23,15 +23,16 @@ export function CurrencySelector({
 }) {
   return (
     <FormControl fullWidth>
-      <Typography variant="h6">{label} </Typography>
+      <Typography variant="h6" >{label} </Typography>
       <Select
         variant="outlined"
         value={value}
         onChange={(e) => onChange(e.target.value)}
+        data-testid="currency-select"
         {...rest}
       >
         {options.map((option) => (
-          <MenuItem key={option.key} value={option.key}>
+          <MenuItem key={option.key} value={option.key} >
             {option.label}
           </MenuItem>
         ))}

@@ -1,5 +1,4 @@
-import React from 'react';
-import { Container, Box, Grid, Typography } from '@mui/material';
+import { Container, Box, Typography } from '@mui/material';
 
 import { CurrencyPanel } from './CurrencyPanel';
 import { FeeDetails } from './FeeDetails';

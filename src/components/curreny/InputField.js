@@ -1,5 +1,5 @@
-import { FormControl, TextField, Typography } from '@mui/material';
 import _ from 'lodash';
+import { FormControl, TextField, Typography } from '@mui/material';
 
 export const InputField = ({
   name,
@@ -17,6 +17,7 @@ export const InputField = ({
     <FormControl fullWidth>
       <Typography variant="h6">{label} </Typography>
       <TextField
+        inputProps={{ 'data-testid': 'textField-input' }}
         name={name}
         variant="outlined"
         defaultValue={value}

@@ -39,7 +39,7 @@ const currencyConverterSlice = createSlice({
     },
   },
   extraReducers: {
-    [getConversionRate.pending]: (state, action) => {
+    [getConversionRate.pending]: (state, _action) => {
       state.converter.loading = true;
     },
     [getConversionRate.fulfilled]: (state, action) => {
