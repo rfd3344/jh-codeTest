@@ -6,11 +6,14 @@ import { theme } from 'src/core/theme';
 import { store } from 'src/core/store';
 import { Router } from 'src/core/Router';
 
+import { Navbar } from 'src/components/navbar/Navbar';
+
 function App() {
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
+        <Navbar />
 
         <Router />
       </ThemeProvider>

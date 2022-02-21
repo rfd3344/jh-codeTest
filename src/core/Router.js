@@ -1,12 +1,16 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Calculator } from 'src/conversionCalculator/Calculator';
+
+import { Home } from 'src/home/Home';
+import { Login } from 'src/login/Login';
+import { Post } from 'src/post/Post';
 
 export function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Calculator />} />
-        <Route path="/conversion-calculator" element={<Calculator />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/post" element={<Post />} />
       </Routes>
     </BrowserRouter>
   );

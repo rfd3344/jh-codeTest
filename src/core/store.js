@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
 
-import currencyConverter from 'src/conversionCalculator/conversionCalculatorSlice';
+import login from 'src/login/loginSlice';
 
 export const store = configureStore({
   reducer: {
-    currencyConverter,
+    login,
   },
   middleware:
     process.env.NODE_ENV === 'development'

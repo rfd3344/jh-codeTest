@@ -1,39 +1,36 @@
 import { createTheme } from '@mui/material/styles';
+import './font/font.css';
 
 const colours = {
-  lightBlue: '#edfbff',
-  blue: '#006fe8',
-  lightGrey: '#f3f4f6',
+  lightPurple: '#a491d3',
+  lightBlue: '#007bff',
+  darkBlue: '#143642',
+  lightGrey: '#000d10',
   success: '#4caf50',
   error: '#e9453a',
 };
 
 export const theme = createTheme({
   typography: {
-    fontSize: 14,
-    h1: {
-      fontWeight: 800,
-    },
-    h2: {
-      fontWeight: 800,
-    },
+    fontSize: 18,
+    fontFamily: '"Space Grotesk"',
     h3: {
-      fontWeight: 700,
+      fontSize: '1.33em',
     },
     h4: {
-      fontWeight: 700,
+      fontSize: '1.22em',
     },
     h5: {
-      fontWeight: 700,
+      fontSize: '1.11em',
     },
     h6: {
-      fontWeight: 500,
+      fontSize: '1.1em',
     },
     subtitle1: {
-      fontWeight: 500,
+      fontSize: '0.89em',
     },
     subtitle2: {
-      fontWeight: 500,
+      fontSize: '0.78em',
     },
     button: {
       fontSize: '0.875rem',
@@ -42,11 +39,14 @@ export const theme = createTheme({
   },
   palette: {
     primary: {
-      main: colours.blue,
-      light: colours.lightBlue,
+      main: colours.lightPurple,
     },
     grey: {
       light: colours.lightGrey,
+    },
+    blue: {
+      light: colours.lightBlue,
+      dark: colours.darkBlue,
     },
     success: {
       main: colours.success,
