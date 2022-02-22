@@ -5,7 +5,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import { theme } from 'src/core/theme';
 import { store } from 'src/core/store';
 import { Router } from 'src/core/Router';
-
+import { GlobalSnackbar } from 'src/core/snackbar/GlobalSnackbar';
 import { Navbar } from 'src/components/navbar/Navbar';
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Navbar />
+        <GlobalSnackbar />
 
         <Router />
       </ThemeProvider>

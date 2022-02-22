@@ -3,7 +3,7 @@ import { Container, Grid, Box, Typography } from '@mui/material';
 
 export const Navbar = () => {
   return (
-    <Box bgcolor="black" height={100}>
+    <Box bgcolor="black.main" height={100}>
       <Container component={Box} height="100%">
         <Grid
           container

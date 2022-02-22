@@ -11,13 +11,15 @@ export const NewToCarlyPanel = () => {
 
   return (
     <Box>
-      <Typography variant="h4"> Continue with..</Typography>
+      <Box py={4}>
+        <Typography variant="h3"> Continue with..</Typography>
+      </Box>
       <ThirdPartyLogin />
       <Box my={3}>
         <Divider />
       </Box>
       <Box my={3}>
-        <Typography variant="h4"> Or Sign Up with your email</Typography>
+        <Typography variant="h3"> Or Sign Up with your email</Typography>
       </Box>
       <SignupForm />
     </Box>

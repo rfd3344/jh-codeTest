@@ -8,6 +8,7 @@ const colours = {
   lightGrey: '#000d10',
   success: '#4caf50',
   error: '#e9453a',
+  black: '#000000',
 };
 
 export const theme = createTheme({
@@ -15,25 +16,27 @@ export const theme = createTheme({
     fontSize: 18,
     fontFamily: '"Space Grotesk"',
     h3: {
-      fontSize: '1.33em',
+      fontSize: '24px',
+      fontWeight: 'bold',
     },
     h4: {
-      fontSize: '1.22em',
+      fontSize: '20px',
     },
     h5: {
-      fontSize: '1.11em',
+      fontSize: '18px',
+      fontWeight: 800,
     },
     h6: {
-      fontSize: '1.1em',
+      fontSize: '16px',
     },
     subtitle1: {
-      fontSize: '0.89em',
+      fontSize: '16px',
     },
     subtitle2: {
-      fontSize: '0.78em',
+      fontSize: '14px',
     },
     button: {
-      fontSize: '0.875rem',
+      fontSize: '1rem',
       textTransform: 'none',
     },
   },
@@ -41,12 +44,18 @@ export const theme = createTheme({
     primary: {
       main: colours.lightPurple,
     },
+    secondary: {
+      main: colours.lightBlue,
+    },
     grey: {
       light: colours.lightGrey,
     },
     blue: {
       light: colours.lightBlue,
       dark: colours.darkBlue,
+    },
+    black: {
+      main: colours.black,
     },
     success: {
       main: colours.success,
@@ -56,5 +65,24 @@ export const theme = createTheme({
     },
   },
   props: {},
-  overrides: {},
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          color: 'white',
+          fontSize: 20,
+          fontWeight: 400,
+        },
+      },
+    },
+    MuiTypography: {
+      styleOverrides: {
+        root: {
+          '& a': {
+            color: colours.lightPurple,
+          },
+        },
+      },
+    },
+  },
 });
