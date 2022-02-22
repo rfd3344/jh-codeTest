@@ -1,22 +1,25 @@
-import React, { Component } from 'react';
-import './App.css';
-import Navbar from './components/navbar/navbar';
-import Signup from './components/signup/signup';
+import { Provider } from 'react-redux';
+import CssBaseline from '@mui/material/CssBaseline';
+import { ThemeProvider } from '@mui/material/styles';
 
+import { theme } from 'src/core/theme';
+import { store } from 'src/core/store';
+import { Router } from 'src/core/Router';
+import { GlobalSnackbar } from 'src/core/snackbar/GlobalSnackbar';
+import { Navbar } from 'src/components/navbar/Navbar';
 
-class App extends Component {
- 
-  render() {
+function App() {
+  return (
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Navbar />
+        <GlobalSnackbar />
 
-    return (
-      <div className="App">
-        <Navbar>   
-        
-        </Navbar>
-        <Signup></Signup>
-      </div>
-    );
-  }
+        <Router />
+      </ThemeProvider>
+    </Provider>
+  );
 }
 
 export default App;
