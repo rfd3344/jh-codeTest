@@ -8,7 +8,7 @@ const colours = {
   lightGrey: '#000d10',
   success: '#4caf50',
   error: '#e9453a',
-  black: '#000000',
+  black: '#000',
 };
 
 export const theme = createTheme({

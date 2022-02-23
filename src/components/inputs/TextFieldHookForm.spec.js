@@ -1,16 +1,25 @@
 import assert from 'assert';
 import { render, fireEvent, waitFor } from '@testing-library/react';
 
-import { InputField } from './InputField';
+import { MockTheme } from 'src/utils/testUtils';
 
-describe('InputField', function () {
-  it('should render InputField', async function () {
+import { TextFieldHookForm } from './TextFieldHookForm';
+
+describe('TextFieldHookForm', function () {
+  it('should render TextFieldHookForm', async function () {
     let value = '';
     const handleChange = (e) => {
       value = e.target.value;
     };
     const { queryAllByTestId, queryAllByText } = render(
-      <InputField label="labelTest" value="AUD" onChange={handleChange} />
+      <MockTheme>
+        <TextFieldHookForm
+          name="name"
+          label="labelTest"
+          value="value"
+          onChange={handleChange}
+        />
+      </MockTheme>
     );
     const label = queryAllByText('labelTest');
     const textField = queryAllByTestId('textField-input');

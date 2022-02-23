@@ -6,7 +6,7 @@ import { theme } from 'src/core/theme';
 import { store } from 'src/core/store';
 import { Router } from 'src/core/Router';
 import { GlobalSnackbar } from 'src/core/snackbar/GlobalSnackbar';
-import { Navbar } from 'src/components/navbar/Navbar';
+import { Navbar } from 'src/core/navbar/Navbar';
 
 function App() {
   return (

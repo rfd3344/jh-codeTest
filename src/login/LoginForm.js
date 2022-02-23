@@ -1,10 +1,8 @@
-import { useState } from 'react';
 import { Typography, Box, Button } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { unwrapResult } from '@reduxjs/toolkit';
 
 import { TextFieldHookForm } from 'src/components/inputs/TextFieldHookForm';
 import { openSnackbar, openErrorBar } from 'src/core/snackbar/snackbarSlice';
@@ -26,11 +24,10 @@ export const LoginForm = () => {
     resolver: yupResolver(validateFormSchema),
   });
 
-  const handleLogin = (formData) => {
-    dispatch(doLogin(formData))
-      .then(unwrapResult)
-      .then((resp) => dispatch(openSnackbar('Success login.')))
-      .catch((e) => dispatch(openErrorBar(e.message)));
+  const handleLogin = async (formData) => {
+    const resp = await dispatch(doLogin(formData));
+    if (resp.error) dispatch(openErrorBar(resp.error.message));
+    else dispatch(openSnackbar('Success login.'));
   };
 
   return (

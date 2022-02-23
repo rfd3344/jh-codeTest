@@ -1,26 +1,27 @@
 import React from 'react';
-import { useTheme, Typography, Box, Grid, Button } from '@mui/material';
+import _ from 'lodash';
+import { useTheme, Typography, Box, Grid } from '@mui/material';
 
 export default {
   title: 'Theme',
 };
 
+const BOX_SIZE = 200;
+const ColorBox = ({ color, children }) => (
+  <Box height={BOX_SIZE} width={BOX_SIZE} m={1} bgcolor={color}>
+    {children}
+  </Box>
+);
 export const Palette = () => {
-  const BOX_SIZE = 200;
   const theme = useTheme();
+  const { palette } = theme;
 
-  const ColorBox = ({ color, children }) => (
-    <Box height={BOX_SIZE} width={BOX_SIZE} m={1} bgcolor={color}>
-      {children}
-    </Box>
-  );
   return (
     <Grid container>
-      <ColorBox color={theme.palette.primary.main}> primary.main </ColorBox>
-      <ColorBox color={theme.palette.primary.light}> primary.light </ColorBox>
-      <ColorBox color={theme.palette.grey.light}> grey.light </ColorBox>
-      <ColorBox color={theme.palette.success.main}> success.main </ColorBox>
-      <ColorBox color={theme.palette.error.main}> error.main </ColorBox>
+      <ColorBox color={palette.primary.main}>primary.main</ColorBox>
+      <ColorBox color={palette.secondary.main}>secondary.main</ColorBox>
+      <ColorBox color={palette.blue.light}>blue.light</ColorBox>
+      <ColorBox color={palette.black.main}>black.main</ColorBox>
     </Grid>
   );
 };

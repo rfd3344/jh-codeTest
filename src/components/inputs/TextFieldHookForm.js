@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormControl, TextField, InputLabel } from '@mui/material';
+import { FormControl, TextField } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import _ from 'lodash';
 
@@ -44,12 +44,12 @@ export function TextFieldHookForm({
         label={label || `${_.capitalize(_.startCase(name))}`}
         variant="standard"
         focused
-        // inputRef={register}
-        InputProps={{ ...register(name) }}
+        InputProps={register && { ...register(name) }}
         defaultValue={value}
         onChange={(e) => handleChange(e)}
         error={_.has(errors, name)}
         helperText={_.get(errors, `${name}.message`)}
+        inputProps={{ 'data-testid': 'textField-input' }}
         {...rest}
       />
     </FormControl>
