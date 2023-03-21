@@ -55,10 +55,22 @@ export default function Page1({
 
   const handleClick = (e: React.SyntheticEvent) => {
     console.warn(user)
-    setUser({
-      name: user?.name ? user.name + 'a' : 'b',
-      age: user?.age ? user.age + 1 : 1,
-    })
+    const b: User = {
+      name: 'a',
+      age: 1
+    }
+    type UserField = keyof User;
+    const cc: UserField = 'age'
+    console.warn('aa', cc)
+    if (b) {
+      setUser({
+        name: b?.name ? b.name + 'a' : 'b',
+        age: b?.age ? b.age + 1 : 1,
+      })
+    } else {
+
+    }
+
     setButtonSize(ButtonSizes.large)
 
   }
