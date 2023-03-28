@@ -11,6 +11,7 @@ import Button from 'src/components/Button';
 
 
 type Props = {
+  name?: string;
   [x: string]: any
 }
 
@@ -20,37 +21,27 @@ interface User {
   age: number;
 }
 
-interface Button {
-  name: string;
-  size: number;
-}
-
-export declare type Position = "left" | "right" | "top" | "bottom";
 
 export enum ButtonSizes {
   default = "default",
   small = "small",
   large = "large",
+  '123 bbb'= '123 bbb'
 }
 
+const bbb: StringFormatOptions = {
+  fancinessLevel: 1243
+};
 
 export default function Page1({
+  name = '',
   ...rest
 }: Props) {
 
-  const bbb: StringFormatOptions = {
-    fancinessLevel: 1243
-  };
-
-  // const c: NumberString = 11
-  const c = 11
-
-
-  // const b = ButtonSizes.default;
-  // console.warn('b', b)
-  const [buttonSize, setButtonSize] = useState(ButtonSizes.default);
 
   const [user, setUser] = useState<User | null>(null);
+  const [buttonSize, setButtonSize] = useState(ButtonSizes.default);
+
 
 
   const handleClick = (e: React.SyntheticEvent) => {
@@ -71,7 +62,7 @@ export default function Page1({
 
     }
 
-    setButtonSize(ButtonSizes.large)
+    setButtonSize(ButtonSizes['123 bbb'])
 
   }
 
@@ -91,10 +82,8 @@ export default function Page1({
         clear
       </Button>
       <div>
-        Position:
-        {bbb.fancinessLevel}
-        {buttonSize}
-        <div>{c}</div>
+        <div>bbb.fancinessLevel: {bbb.fancinessLevel}</div>
+        <div>buttonSize: {buttonSize}</div>
       </div>
     </div>
   );
