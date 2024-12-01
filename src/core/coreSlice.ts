@@ -2,12 +2,7 @@ import _ from 'lodash';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const initialState = {
-  country: {},
-  snackBar: {
-    isOpen: false,
-    isError: false,
-    message: '',
-  },
+  test: 'aaa'
 };
 
 const slice = createSlice({

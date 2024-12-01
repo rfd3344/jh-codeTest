@@ -22,15 +22,5 @@ export default function Providers({
       </ReduxProvider>
     </BrowserRouter>
   );
-  // return (
-  //   <BrowserRouter>
-  //     <ReduxProvider store={store}>
-  //       <ThemeProvider theme={theme}>
-  //         <CssBaseline />
-  //         {children}
-  //       </ThemeProvider>
-  //     </ReduxProvider>
-  //   </BrowserRouter>
-  // );
 
 }

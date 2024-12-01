@@ -29,6 +29,8 @@ export default tseslint.config(
       }],
       'semi': 'warn',
       '@typescript-eslint/no-unused-vars': 0,
+      '@typescript-eslint/no-explicit-any': 0
+
     },
   },
 );
