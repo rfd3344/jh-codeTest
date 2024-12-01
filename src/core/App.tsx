@@ -4,7 +4,7 @@ import Providers from './Providers';
 import Router from './Router';
 
 
-import './tailwind.css';
+import './tailwind/tailwind.css';
 
 export default function App() {
 

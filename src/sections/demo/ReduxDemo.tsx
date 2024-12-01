@@ -17,7 +17,7 @@ export default function ReduxDemo() {
 
   return (
     <section>
-      <h1>ReduxDemo</h1>
+      <h3>ReduxDemo</h3>
 
       <button onClick={handleClick}>aaaa</button>
 

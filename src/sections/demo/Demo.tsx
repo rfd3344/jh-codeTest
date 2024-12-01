@@ -1,12 +1,7 @@
-import React, { useEffect } from 'react';
-
-import { useDispatch, useSelector } from 'react-redux';
-
-import { updateCore } from 'src/core/coreSlice';
-
+import React from 'react';
 
 import ReduxDemo from './ReduxDemo';
-
+import FlowbiteDemo from './FlowbiteDemo';
 
 
 export default function Demo() {
@@ -17,6 +12,7 @@ export default function Demo() {
     <section>
       <h1>Demo</h1>
       <ReduxDemo />
+      <FlowbiteDemo />
     </section>
   );
 
