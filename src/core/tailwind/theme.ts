@@ -2,19 +2,6 @@ export const theme = {
   container: {
     center: true,
   },
-  // colors: {
-  //   // docs: https://tailwindcss.com/docs/customizing-colors#color-object-syntax
-
-  //   cyan: '#06b6d4',
-  //   salmon: '#F46036',
-  //   gray: {
-  //     lightest: '#f3f4f6',
-  //     light: '#e5e7eb',
-  //     DEFAULT: '#d1d5db',
-  //     dark: '#9ca3af',
-  //     darkest: '#6b7280',
-  //   },
-  // },
 
   fontFamily: {},
 
@@ -40,6 +27,19 @@ export const theme = {
   // },
 
   extend: {
+    colors: {
+    // docs: https://tailwindcss.com/docs/customizing-colors#color-object-syntax
+
+      primary: '#06b6d4',
+      secondary: '#F46036',
+      gray: {
+        lightest: '#f3f4f6',
+        light: '#e5e7eb',
+        DEFAULT: '#d1d5db',
+        dark: '#9ca3af',
+        darkest: '#6b7280',
+      },
+    },
 
   },
 };
